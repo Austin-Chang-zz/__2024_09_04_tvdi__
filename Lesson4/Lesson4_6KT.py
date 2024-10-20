@@ -6,9 +6,20 @@ class Window(ThemedTk):
         super().__init__(*args,**kwargs)
         self.title('使用ttk的套件')
         style = ttk.Style(self)        
-        topFrame = ttk.Frame(self,width=300,height=100,borderwidth=1,relief='groove')
-        topFrame.pack(pady=(10,0))
-        bottomFrame = ttk.Frame(self,width=500,height=300,borderwidth=1,relief='groove')
+        # topFrame = ttk.Frame(self,borderwidth=1,relief='groove')  # top frame ---------------
+        topFrame = ttk.Frame(self,borderwidth=1,relief='sunken')  # top frame ---------------
+        topFrame.pack(padx=10,pady=(10,0),ipadx=10,ipady=10,expand=True,fill='x')
+
+        btn1 = ttk.Button(topFrame,text="按鈕1")
+        btn1.pack(side='left',expand=True,fill='x',padx=10)
+
+        btn2 = ttk.Button(topFrame,text="按鈕2")
+        btn2.pack(side='left',expand=True,fill='x')
+        
+        btn3 = ttk.Button(topFrame,text="按鈕3")
+        btn3.pack(side='left',expand=True,fill='x',padx=10)
+        
+        bottomFrame = ttk.Frame(self,width=500,height=300,borderwidth=1,relief='sunken') # bottom frame ---------
         bottomFrame.pack(padx=10,pady=10)
 
 def main():

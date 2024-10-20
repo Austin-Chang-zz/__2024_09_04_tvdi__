@@ -1,8 +1,6 @@
 import requests
 from requests import Response
 
-
-
 def main():
     url_csv = 'https://data.moi.gov.tw/MoiOD/System/DoVwnloadFile.aspx?DATA=5481753E-52AF-40DA-9A8A-9E192B245E13'    
 
