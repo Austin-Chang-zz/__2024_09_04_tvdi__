@@ -14,7 +14,7 @@ class Window(ThemedTk):
         style.configure('Main4.TButton',font=("Arial",15,"overstrike"),foreground="black")
         #================================start topframe====================================
         topFrame = ttk.Frame(self,borderwidth=1,relief='groove')
-        self.btn1 = ttk.Button(topFrame,text="加入購物車",style='Main.TButton',command=self.user_click1)
+        self.btn1 = ttk.Button(topFrame,text="加入購物車",style='Main.TButton',command=self.user_click1) #--------command binding----
         self.btn1.pack(side='left',expand=True,fill='both',padx=10)
         btn2 = ttk.Button(topFrame,text="我的最愛",style='Main.TButton',command=self.user_click2)
         btn2.pack(side='left',expand=True,fill='both')
@@ -29,7 +29,7 @@ class Window(ThemedTk):
         #================================start leftframe================================
         leftFrame =ttk.Frame(bottomFrame,width=100,height=300,borderwidth=2,relief='groove')
         btn4 = ttk.Button(leftFrame,text="Home",style='Main1.TButton')
-        btn4.bind('<ButtonRelease>',self.left_button_click)
+        btn4.bind('<ButtonRelease>',self.left_button_click) #---------------------event binding ----------
         btn4.pack(expand=True,fill='x',padx=10,pady=5,ipady=50)
         btn5 = ttk.Button(leftFrame,text="Cancel",style='Main2.TButton')
         btn5.bind('<ButtonRelease>',self.left_button_click)
@@ -65,7 +65,7 @@ class Window(ThemedTk):
         #================================end bottomframe==================================
 
     def user_click1(self):
-        self.btn1.configure(text="被按了")
+        self.btn1.configure(text="被按了")  #---command binding---------------------
         print("Hello!button1")
 
     def user_click2(self):
@@ -74,12 +74,13 @@ class Window(ThemedTk):
     def user_click3(self):
         print("Hello1 button3")
 
-    def left_button_click(self,event):
+    def left_button_click(self,event): #-----event binding-----------------
+        print(event)
         print(type(event))
         print(event.x)
         print(event.y)
         print(event.width)
-        print(event.widget.configure(text="被按了"))
+        print(event.widget.configure(text="clicked"))
 
 def main():
     window = Window(theme="arc")

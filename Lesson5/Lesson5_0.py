@@ -15,9 +15,8 @@ class Window(ThemedTk):
             # expand is for space holder,fill = 'x' for left and right
         topFrame.pack(padx=10,pady=(10,0),ipadx=10,ipady=10,expand=True,fill='x')  
            
-
-        btn1 = ttk.Button(topFrame,text="歐洲",command=self.user_click1)
-        btn1.pack(side='left',expand=True,fill='x',padx=10)
+        self.btn1 = ttk.Button(topFrame,text="歐洲",command=self.user_click1)
+        self.btn1.pack(side='left',expand=True,fill='x',padx=10)
 
         btn2 = ttk.Button(topFrame,text="北美",command=self.user_click2)
         btn2.pack(side='left',expand=True,fill='x')
@@ -89,6 +88,7 @@ class Window(ThemedTk):
         # ================= end of bottom frame ======================   
 
     def user_click1(self):   # instance method
+        self.btn1.configure(text="clicked")
         print("hello:button1")
     def user_click2(self):   # instance method
         print("hello:button2")
