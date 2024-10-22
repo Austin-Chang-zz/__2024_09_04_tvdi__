@@ -14,7 +14,7 @@ class Window(ThemedTk):
         
         #==============top Frame===============
         topFrame = ttk.Frame(self)
-        ttk.Label(topFrame, text='check_box多選鈕', style='TopFrame.TLabel').pack()
+        ttk.Label(topFrame, text='Hi there! It is nice to see you!', style='TopFrame.TLabel').pack()
         topFrame.pack(padx=20, pady=20)
         #==============end topFrame===============
         
@@ -24,11 +24,12 @@ class Window(ThemedTk):
 
         # Create the checkbutton here, outside of the function
         checkbutton = ttk.Checkbutton(bottomFrame,
-                                      text='I agree',
+                                      text='Thanks',
                                       variable=self.agreement,
-                                      onvalue='agree',
-                                      offvalue='disagree',
+                                      onvalue='It is wonderful to see you too!',
+                                      offvalue='Thanks, but I have had a rough week.',
                                       command=self.agreement_changed)
+    
         checkbutton.pack()
 
         bottomFrame.pack(expand=True, fill='x', padx=20, pady=(0, 20), ipadx=10, ipady=10)
